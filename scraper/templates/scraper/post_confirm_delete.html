@@ -1,0 +1,12 @@
+ {% extends "scraper/base.html" %}
+
+ {% block content %}
+
+
+<form method="POST">
+	{% csrf_token %}
+	<p> Are you sure you want to delete this "{{ object.title }}"</p>
+	<button type="submit">Yes delete</button>
+	<a href="{% url 'post-detail' object.id %}">Cancel</a>
+</form>
+{% endblock content %} 

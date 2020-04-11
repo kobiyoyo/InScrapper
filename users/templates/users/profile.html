@@ -1,0 +1,16 @@
+ {% extends "scraper/base.html" %}
+  {% load crispy_forms_tags %}
+ {% block content %}
+ <img height="100" src="{{ user.profile.image.url }}">
+<h1> {{ user.username }}</h1>
+<p> {{ user.email }}</p>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ u_form | crispy }}
+	{{ p_form | crispy }}
+<button type="submit">Update</button>
+	
+
+</form>
+
+{% endblock content %} 

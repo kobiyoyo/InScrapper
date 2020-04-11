@@ -1,0 +1,41 @@
+ {% extends "scraper/base.html" %}
+ {% block content %}
+<div class="row">
+    <div class="card col-12 mb-4">
+     <div class="card-body">
+		    <h2 class="card-title">#{{ object.title }}</h2>
+		    <h6 class="card-subtitle mb-2 text-muted">Created by:{{ object.author }}</h6>
+		    <a href="{% url 'post-update' object.id %}" class="card-link">Edit Tag</a>
+		    <a href="{% url 'post-delete' object.id %}" class="card-link">Delete</a>
+      </div>
+  
+	</div>
+
+
+</div>
+
+
+<div class="card text-center" style="width: 68rem;">
+  <ul class="list-group list-group-flush">
+ 
+  {% for scrap in object.agenda %}
+    <li class="list-group-item">{{ scrap }}</li>
+   {%  endfor %}
+
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
